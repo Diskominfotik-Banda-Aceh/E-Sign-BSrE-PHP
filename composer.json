@@ -1,0 +1,42 @@
+{
+    "name": "diskominfotik-banda-aceh/e-sign-bsre-native",
+    "description": "Package E-Sign BSrE untuk memudahkan penggunaan E-Sign BSrE (Balai Sertifikasi Elektronik) API dari BSSN (Badan Sandi dan Siber Negara)",
+    "keywords": [
+        "diskominfotik-banda-aceh",
+        "e-sign-bsre-native"
+    ],
+    "homepage": "https://github.com/diskominfotik-banda-aceh/e-sign-bsre-native",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Diskominfotik Banda Aceh",
+            "email": "diskominfotikbna@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DiskominfotikBandaAceh\\ESignBsreNative\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DiskominfotikBandaAceh\\ESignBsreNative\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
