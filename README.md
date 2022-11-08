@@ -36,12 +36,14 @@ Kode yang disediakan ada beberapa yaitu tanda tangan digital invisible, verifika
 
 - Tanda tangan digital invisible 
 ```php
-ESignBSrE::signInvisible($nik, $passphrase, $file, $filename);
+$esign = new ESignBSrE();
+$esign->signInvisible($nik, $passphrase, $file, $filename);
 ```
 
 - Verifikasi tanda tangan digital  
 ```php
-ESignBSrE::signVerification($file, $fileName)
+$esign = new ESignBSrE();
+$esign->signVerification($file, $fileName)
 ```
 
 <!--### Testing
