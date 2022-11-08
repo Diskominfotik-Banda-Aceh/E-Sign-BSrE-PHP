@@ -1,8 +1,8 @@
 # Very short description of the package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/diskominfotik-banda-aceh/e-sign-bsre-native.svg?style=flat-square)](https://packagist.org/packages/diskominfotik-banda-aceh/e-sign-bsre-native)
-[![Total Downloads](https://img.shields.io/packagist/dt/diskominfotik-banda-aceh/e-sign-bsre-native.svg?style=flat-square)](https://packagist.org/packages/diskominfotik-banda-aceh/e-sign-bsre-native)
-![GitHub Actions](https://github.com/diskominfotik-banda-aceh/e-sign-bsre-native/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/diskominfotik-banda-aceh/esign-bsre-php.svg?style=flat-square)](https://packagist.org/packages/diskominfotik-banda-aceh/esign-bsre-php)
+[![Total Downloads](https://img.shields.io/packagist/dt/diskominfotik-banda-aceh/esign-bsre-php.svg?style=flat-square)](https://packagist.org/packages/diskominfotik-banda-aceh/esign-bsre-php)
+![GitHub Actions](https://github.com/diskominfotik-banda-aceh/esign-bsre-php/actions/workflows/main.yml/badge.svg)
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
@@ -11,7 +11,7 @@ This is where your description should go. Try and limit it to a paragraph or two
 You can install the package via composer:
 
 ```bash
-composer require diskominfotik-banda-aceh/e-sign-bsre-native
+composer require diskominfotik-banda-aceh/esign-bsre-php
 ```
 
 ## Usage
