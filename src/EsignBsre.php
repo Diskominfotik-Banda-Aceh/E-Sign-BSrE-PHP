@@ -14,7 +14,7 @@ class EsignBsre
     private $fileName;
     private $view = 'invisible';
 
-    public function __construct($baseUrl=null, $username=null, $password=null){
+    public function __construct($baseUrl, $username, $password){
         $this->baseUrl = $baseUrl;
 
         $this->http = new GuzzleClient();
