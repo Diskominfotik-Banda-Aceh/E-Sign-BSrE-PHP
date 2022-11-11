@@ -1,8 +1,8 @@
 <?php
 
-namespace DiskominfotikBandaAceh\EsignBsrePhp;
+namespace DiskominfotikBandaAceh\ESignBsrePhp;
 
-class EsignBsreResponse
+class ESignBsreResponse
 {
     private $status;
     private $errors;

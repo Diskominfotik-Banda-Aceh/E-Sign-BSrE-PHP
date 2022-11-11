@@ -1,10 +1,10 @@
 <?php
 
-namespace DiskominfotikBandaAceh\EsignBsrePhp;
+namespace DiskominfotikBandaAceh\ESignBsrePhp;
 
 use GuzzleHttp\Client as GuzzleClient;
 
-class EsignBsre
+class ESignBsre
 {
     private $http;
     private $baseUrl;
@@ -47,7 +47,7 @@ class EsignBsre
             ]
         ]);
 
-        return new ESignBSreResponse($response);
+        return new ESignBsreResponse($response);
     }
 
     public function verification()
@@ -63,6 +63,6 @@ class EsignBsre
             ]
         ]);
 
-        return new ESignBSreResponse($response);
+        return new ESignBsreResponse($response);
     }
 }

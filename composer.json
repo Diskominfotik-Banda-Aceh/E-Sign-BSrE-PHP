@@ -1,11 +1,11 @@
 {
-    "name": "diskominfotik-banda-aceh/esign-bsre-php",
+    "name": "diskominfotik-banda-aceh/e-sign-bsre-php",
     "description": "Package E-Sign BSrE untuk memudahkan penggunaan E-Sign BSrE (Balai Sertifikasi Elektronik) API dari BSSN (Badan Sandi dan Siber Negara)",
     "keywords": [
         "diskominfotik-banda-aceh",
-        "esign-bsre-php"
+        "e-sign-bsre-php"
     ],
-    "homepage": "https://github.com/diskominfotik-banda-aceh/esign-bsre-php",
+    "homepage": "https://github.com/diskominfotik-banda-aceh/e-sign-bsre-php",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DiskominfotikBandaAceh\\EsignBsrePhp\\": "src"
+            "DiskominfotikBandaAceh\\ESignBsrePhp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DiskominfotikBandaAceh\\EsignBsrePhp\\Tests\\": "tests"
+            "DiskominfotikBandaAceh\\ESignBsrePhp\\Tests\\": "tests"
         }
     },
     "scripts": {
