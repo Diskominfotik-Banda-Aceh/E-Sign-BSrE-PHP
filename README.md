@@ -28,6 +28,10 @@ Anda bisa install package via composer:
 ```bash
 composer require diskominfotik-banda-aceh/e-sign-bsre-php
 ```
+Jika Anda menggunakan PHP Native tambahkan baris berikut:
+```php
+require 'vendor/autoload.php';
+```
 
 ## Penggunaan
 
@@ -36,14 +40,21 @@ Kode yang disediakan ada beberapa yaitu tanda tangan digital invisible, verifika
 
 - Tanda tangan digital invisible 
 ```php
-$esign = new ESignBSrE();
-$esign->signInvisible($nik, $passphrase, $file, $filename);
+$esign = new ESignBSrE($baseUrl, $username, $password);
+$response = $esign->setFile($file, $filename)->sign($nik, $passphrase);
 ```
 
 - Verifikasi tanda tangan digital  
 ```php
 $esign = new ESignBSrE();
-$esign->signVerification($file, $fileName)
+$response = $esign->setFile($file, $filename)->verification();
+```
+
+### Mengambil Response
+```php
+$status = $response->getStatus();
+$body = $response->getBody();
+$errors = $response->getErrors();
 ```
 
 <!--### Testing
