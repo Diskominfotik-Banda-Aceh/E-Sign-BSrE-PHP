@@ -53,7 +53,7 @@ $response = $esign->setFile($file, $filename)->verification();
 ### Mengambil Response
 ```php
 $status = $response->getStatus();
-$body = $response->getBody();
+$data = $response->getData();
 $errors = $response->getErrors();
 ```
 
