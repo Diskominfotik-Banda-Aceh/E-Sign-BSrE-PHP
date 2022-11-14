@@ -12,16 +12,21 @@ class ESignBsreResponse
 
     public function __construct($response)
     {
-        $this->response = $response;
-
-        $this->setStatus();
-        $this->setErrors();
-        $this->setData();
+        $this->setFromResponse($response);
     }
 
-    private function setStatus(): void
+    public function setFromResponse($response){
+        $this->response = $response;
+        $this->setStatusFromResponse();
+        $this->setDataFromResponse();
+        $this->setErrorsFromResponse();
+
+        return $this;
+    }
+
+    private function setStatusFromResponse(): void
     {
-        $this->status = $this->response->status();
+        $this->status = $this->response->getStatusCode();
     }
 
     /**
@@ -35,10 +40,10 @@ class ESignBsreResponse
     /**
      * @param mixed $errors
      */
-    public function setErrors(): void
+    public function setErrorsFromResponse(): void
     {
-        if ($this->status != self::STATUS_OK){
-            $this->errors = json_decode($this->response->body())->error;
+        if ($this->isFailed()){
+            $this->errors = json_decode($this->response->getBody()->getContents())->error;
         }
     }
 
@@ -53,10 +58,10 @@ class ESignBsreResponse
     /**
      * @param mixed $data
      */
-    public function setData(): void
+    public function setDataFromResponse(): void
     {
-        if ($this->status == self::STATUS_OK){
-            $this->data = $this->response->body();
+        if ($this->isSuccess()){
+            $this->data = $this->response->getBody()->getContents();
         }
     }
 
@@ -66,5 +71,13 @@ class ESignBsreResponse
     public function getData()
     {
         return $this->data;
+    }
+
+    private function isSuccess(){
+        return $this->status == self::STATUS_OK;
+    }
+
+    private function isFailed(){
+        return $this->status != self::STATUS_OK;
     }
 }

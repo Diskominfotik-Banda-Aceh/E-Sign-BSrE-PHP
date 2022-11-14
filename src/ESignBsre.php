@@ -31,38 +31,63 @@ class ESignBsre
 
     public function sign($nik, $passphrase)
     {
-        $response = $this->http->request('POST', "{$this->baseUrl}/api/sign/pdf", [
-            'auth' => [$this->username, $this->password],
-            'multipart' => [
-                [
-                    'name'     => 'file',
-                    'contents' => $this->file,
-                    'filename' => $this->fileName
+        try {
+            $response = $this->http->request('POST', "{$this->getBaseUrl()}/api/sign/pdf", [
+                'auth' => $this->getAuth(),
+                'multipart' => [
+                    [
+                        'name'     => 'file',
+                        'contents' => $this->file,
+                        'filename' => $this->fileName
+                    ],
+                    [
+                        'name'     => 'nik',
+                        'contents' => $nik,
+                    ],
+                    [
+                        'name'     => 'passphrase',
+                        'contents' => $passphrase,
+                    ],
+                    [
+                        'name'     => 'tampilan',
+                        'contents' => $this->view,
+                    ],
                 ],
-            ],
-            'form_params' => [
-                'nik' => $nik,
-                'passphrase' => $passphrase,
-                'tampilan' => $this->view,
-            ]
-        ]);
+            ]);
+        }catch (\Exception $e) {
+            $response = $e->getResponse();
+        }
 
         return new ESignBsreResponse($response);
     }
 
     public function verification()
     {
-        $response = $this->http->request('POST', "{$this->baseUrl}/api/sign/verify", [
-            'auth' => [$this->username, $this->password],
-            'multipart' => [
-                [
-                    'name'     => 'signed_file',
-                    'contents' => $this->file,
-                    'filename' => $this->fileName
-                ],
-            ]
-        ]);
+        try {
+            $response = $this->http->request('POST', "{$this->baseUrl}/api/sign/verify", [
+                'auth' => $this->getAuth(),
+                'multipart' => [
+                    [
+                        'name' => 'signed_file',
+                        'contents' => $this->file,
+                        'filename' => $this->fileName
+                    ],
+                ]
+            ]);
+        }catch (\Exception $e) {
+            $response = $e->getResponse();
+        }
 
         return new ESignBsreResponse($response);
+    }
+
+    private function getAuth(){
+        return [$this->username, $this->password];
+    }
+
+    private function getBaseUrl(){
+        $url = parse_url($this->baseUrl);
+
+        return $url['scheme'] . '://' . $url['host'];
     }
 }
