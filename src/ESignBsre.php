@@ -64,7 +64,7 @@ class ESignBsre
     public function verification()
     {
         try {
-            $response = $this->http->request('POST', "{$this->baseUrl}/api/sign/verify", [
+            $response = $this->http->request('POST', "{$this->getBaseUrl()}/api/sign/verify", [
                 'auth' => $this->getAuth(),
                 'multipart' => [
                     [
@@ -86,8 +86,6 @@ class ESignBsre
     }
 
     private function getBaseUrl(){
-        $url = parse_url($this->baseUrl);
-
-        return $url['scheme'] . '://' . $url['host'];
+        return rtrim($this->baseUrl, "/");
     }
 }

@@ -43,7 +43,9 @@ class ESignBsreResponse
     public function setErrorsFromResponse(): void
     {
         if ($this->isFailed()){
-            $this->errors = json_decode($this->response->getBody()->getContents())->error;
+            $responseBody = json_decode($this->response->getBody()->getContents());
+
+            $this->errors = $responseBody->message ?? $responseBody->error;
         }
     }
 
