@@ -40,21 +40,20 @@ Kode yang disediakan ada beberapa yaitu tanda tangan digital invisible, verifika
 
 - Tanda tangan digital invisible 
 ```php
-$esign = new ESignBSrE($baseUrl, $username, $password);
+$esign = new DiskominfotikBandaAceh\ESignBsrePhp\ESignBSrE($baseUrl, $username, $password);
 $response = $esign->setFile($file, $filename)->sign($nik, $passphrase);
+$response->getStatus(); //Get status response (int)
+$response->getErrors(); //Get error response
+$response->getData(); //Get data as blob pdf
 ```
 
 - Verifikasi tanda tangan digital  
 ```php
-$esign = new ESignBSrE();
+$esign = new DiskominfotikBandaAceh\ESignBsrePhp\ESignBSrE($baseUrl, $username, $password);
 $response = $esign->setFile($file, $filename)->verification();
-```
-
-### Mengambil Response
-```php
-$status = $response->getStatus();
-$data = $response->getData();
-$errors = $response->getErrors();
+$response->getStatus(); //Get status response (int)
+$response->getErrors(); //Get error response
+$response->getData(); //Get data as array (tergantung dari API BSrE)
 ```
 
 <!--### Testing
