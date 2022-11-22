@@ -92,6 +92,7 @@ Jika anda menemukan masalah kerentanan keamanan pada package, tolong email ke di
 
 -   [Maulidan Nashuha](https://github.com/maulidandev)
 -   [Rayhan Yulanda](https://github.com/RayhanYulanda)
+-   [Faisal Tifta Zany](https://github.com/faisalzany)
 -   [All Contributors](../../contributors)
 
 ## License
