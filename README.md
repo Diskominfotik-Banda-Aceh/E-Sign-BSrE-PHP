@@ -42,7 +42,7 @@ Kode yang disediakan ada beberapa yaitu tanda tangan digital invisible, verifika
 ```php
 $esign = new DiskominfotikBandaAceh\ESignBsrePhp\ESignBSrE($baseUrl, $username, $password);
 $response = $esign->setFile($file, $filename)->sign($nik, $passphrase);
-$response->getStatus(); //Get status response (int)
+$response->getStatus(); //Get status response (int) - 404, 200 etc
 $response->getErrors(); //Get error response
 $response->getData(); //Get data as blob pdf
 ```
