@@ -57,7 +57,7 @@ $response->getData(); //Get data as array (tergantung dari API BSrE)
 ```
 
 ### Contoh kode mengambil file
-Terdapat berapa cara untuk mengambil file yang terdapat pada aplikasi
+Terdapat beberapa cara untuk mengambil file yang terdapat pada aplikasi
 
 - Menggunakan Utils dari GuzzleHttp
 ```php
