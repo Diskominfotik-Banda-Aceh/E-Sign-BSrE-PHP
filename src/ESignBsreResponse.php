@@ -63,7 +63,7 @@ class ESignBsreResponse
     public function setDataFromResponse(): void
     {
         if ($this->isSuccess()){
-            if (str_contains(strtolower(implode(" ", $this->response->getHeader('Content-Type'))), strtolower('application/json')))
+            if (strpos(strtolower(implode(" ", $this->response->getHeader('Content-Type'))), strtolower('application/json')) !== false)
                 $this->data = json_decode($this->response->getBody()->getContents());
             else
                 $this->data = $this->response->getBody()->getContents();

@@ -56,6 +56,19 @@ $response->getErrors(); //Get error response
 $response->getData(); //Get data as array (tergantung dari API BSrE)
 ```
 
+### Contoh kode mengambil file
+Terdapat berapa cara untuk mengambil file yang terdapat pada aplikasi
+
+- Menggunakan Utils dari GuzzleHttp
+```php
+$file = GuzzleHttp\Psr7\Utils::tryFopen('/path/to/file.pdf', 'r')
+```
+
+- Menggunakan `file_get_contents`
+```php
+$file = file_get_contents('/path/to/file.pdf')
+```
+
 <!--### Testing
 
 ```bash
