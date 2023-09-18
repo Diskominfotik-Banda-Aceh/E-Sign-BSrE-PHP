@@ -3,6 +3,7 @@
 namespace DiskominfotikBandaAceh\ESignBsrePhp;
 
 use GuzzleHttp\Client as GuzzleClient;
+use PhpParser\Node\Stmt\TryCatch;
 
 class ESignBsre
 {
@@ -75,6 +76,18 @@ class ESignBsre
                 ]
             ]);
         }catch (\Exception $e) {
+            $response = $e->getResponse();
+        }
+
+        return new ESignBsreResponse($response);
+    }
+
+    public function statusUser($nik) {
+        try {
+            $response = $this->http->request('GET', "{$this->getBaseUrl()}/api/user/status/$nik", [
+                'auth' => $this->getAuth()
+            ]);
+        } catch (\Exception $e) {
             $response = $e->getResponse();
         }
 
