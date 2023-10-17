@@ -16,7 +16,7 @@ class ESignBsre
     private $view = 'invisible';
     private $timeout;
 
-    public function __construct($baseUrl, $username, $password, $timeout=1){
+    public function __construct($baseUrl, $username, $password, $timeout=30){
         $this->baseUrl = $baseUrl;
 
         $this->http = new GuzzleClient();
