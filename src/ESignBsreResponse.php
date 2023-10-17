@@ -8,11 +8,14 @@ class ESignBsreResponse
     private $errors;
     private $data;
     private $response;
-    private const STATUS_OK = 200;
+    public const STATUS_OK = 200;
+    public const STATUS_TIMEOUT = 408;
 
-    public function __construct($response)
-    {
-        $this->setFromResponse($response);
+    public function setFromExeption($error, $status){
+        $this->status = $status;
+        $this->errors = $error->getMessage();
+
+        return $this;
     }
 
     public function setFromResponse($response){
