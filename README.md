@@ -56,6 +56,19 @@ $response->getErrors(); //Get error response
 $response->getData(); //Get data as array (tergantung dari API BSrE)
 ```
 
+## Detail
+### Keterangan Variable 
+```php
+// $baseUrl adalah baseUrl dari sistem sign BSrE. Contoh : https://sign.domain.com/
+// $username adalah username yang diberikan dari sistem sign BSrE
+// $password adalah password yang diberikan dari sistem sign BSrE
+// $file adalah content dari file pdf yang akan di sign (Contoh pengambilan file dapat dilihat dibawah)
+// $filename adalah nama file pdf yang akan di sign
+
+$esign = new DiskominfotikBandaAceh\ESignBsrePhp\ESignBSrE($baseUrl, $username, $password);
+$response = $esign->setFile($file, $filename)->verification();
+```
+
 ### Contoh kode mengambil file
 Terdapat beberapa cara untuk mengambil file yang terdapat pada aplikasi
 
