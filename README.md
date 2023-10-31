@@ -97,6 +97,7 @@ Lihat [CHANGELOG](CHANGELOG.md) untuk informasi lebih lanjut terkait perubahan t
 <a href="https://github.com/Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP" />
 </a>
+
 Lihat [CONTRIBUTING](CONTRIBUTING.md) untuk lebih detailnya.
 
 ### Keamanan
