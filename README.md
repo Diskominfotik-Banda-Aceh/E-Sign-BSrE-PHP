@@ -94,19 +94,14 @@ composer test
 Lihat [CHANGELOG](CHANGELOG.md) untuk informasi lebih lanjut terkait perubahan terbaru.
 
 ## Contributing
-
+<a href="https://github.com/Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Diskominfotik-Banda-Aceh/E-Sign-BSrE-PHP" />
+</a>
 Lihat [CONTRIBUTING](CONTRIBUTING.md) untuk lebih detailnya.
 
 ### Keamanan
 
 Jika anda menemukan masalah kerentanan keamanan pada package, tolong email ke diskominfotikbna[at]gmail.com
-
-## Credits
-
--   [Maulidan Nashuha](https://github.com/maulidandev)
--   [Rayhan Yulanda](https://github.com/RayhanYulanda)
--   [Faisal Tifta Zany](https://github.com/faisalzany)
--   [All Contributors](../../contributors)
 
 ## License
 
